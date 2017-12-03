@@ -18,15 +18,32 @@ def response():
     # 3)return something from that if statement
 
     # Ex: 
-    # if request.form == 'Python':
-    #     beginner_reponse = ['idea 1', 'idea 2']
-    #     intermideate_reponse = ['idea2']
-    #     expert_reponse = ['idea2']
-    # if request.form == 'Java':
-    #     beginner_reponse = ['idea 1', 'idea 2']
-    #     intermideate_reponse = ['idea2']
-    #     expert_reponse = ['idea2']
-    # return render_template('response.html' beginner_response = beginner_response ...)
+    # item  = list(['item', 'item2'])   
+    form = Search(request.form)     
+    if request.method == 'POST':
+        userInput = form.language.data      
+        if userInput == 'Python':
+            beginner_response = list(['working', 'working2'])
+            intermideate_response = list(['working'])
+            expert_response = list(['working'])      
+        if userInput == 'Java':
+            beginner_response = list(['working'])
+            intermideate_response = list(['working'])
+            expert_response = list(['working'])
+        if userInput == 'C#':
+            beginner_response = list(['working'])
+            intermideate_response = list(['working'])
+            expert_response = list(['working'])
+        if userInput == 'Ruby':
+            beginner_response = list(['working'])
+            intermideate_response = list(['working'])
+            expert_response = list(['working'])
+        if userInput == 'Swift':
+            beginner_response = list(['working'])
+            intermideate_response = list(['working'])
+            expert_response = list(['working'])
+              
+        return render_template('response.html', beginner_response = beginner_response, intermideate_response = intermideate_response, expert_response = expert_response )
     return render_template('response.html')
 
 class Search(FlaskForm):

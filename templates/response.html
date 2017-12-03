@@ -1,29 +1,21 @@
-{% extends 'layout.html' %}
-{% block body %}
+{% extends 'layout.html' %} {% block body %}
 
 <div class="container">
   <h1>Beginner Ideas</h1>
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  <!-- {% for i in begginer_reponse %}
-  <li>{display reponses}</li>
-  {% endfor %} -->
-  <h1>intermidite Ideas</h1>
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  
-  <!-- {% for i in intermidite_reponse %}
-  <li>{display reponses}</li>
-  {% endfor %} -->
-  <h1>Expert Ideas</h1>  
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  <li>Idea 1</li>
-  
-  <!-- {% for i in expert_reponse %}
-  <li>{display reponses}</li>
-  {% endfor %} -->
+  {% for res in  beginner_response %}
+  <li>{{ res }}</li>
+  {% endfor %}
+  <h1>Intermideate Ideas</h1>
+  {% for res in intermideate_response %}
+  <li>{{ res }}</li>
+  {% endfor %}
+  <h1>Expert Ideas</h1>
+  {% for res in expert_response %}
+  <li>{{ res }}</li>
+  {% endfor %}    
+
+  {% for i in item2 %}
+  <li>{{ i }}</li>
+  {% endfor %}
 </div>
 {% endblock %}
